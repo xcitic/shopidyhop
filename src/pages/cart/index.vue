@@ -52,7 +52,7 @@
         <p class="text-2xl font-bold">Total: ${{ cartTotal }}</p>
       </div>
     </div>
-    
+
     <div v-else>
       <p class="text-gray-500">Your cart is empty.</p>
     </div>
@@ -66,15 +66,13 @@ import type { CartItem } from '~/types';
 
 const cartStore = useCartStore();
 const cartItems = computed(() => cartStore.cart);
-
-// Calculate total price
-const cartTotal = computed(() =>
-  cartStore.cart.reduce((acc, item) => acc + item.price * item.quantity, 0)
-);
+const cartTotal = computed(() => cartStore.cartTotal)
 
 
 const updateQuantity = (item: CartItem) => {
-  if (item.quantity < 1) item.quantity = 1;
+  if (item.quantity < 1) {
+    cartStore.removeFromCart(item.id);
+  }
   cartStore.updateQuantity(item.id, item.quantity);
 };
 

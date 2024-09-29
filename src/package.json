@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.5.4",
+    "big.js": "^6.2.2",
     "nuxt": "^3.13.0",
     "vue": "latest",
     "vue-router": "latest"
@@ -19,6 +20,7 @@
     "vue": "latest"
   },
   "devDependencies": {
+    "@types/big.js": "^6.2.2",
     "autoprefixer": "^10.4.20",
     "daisyui": "^4.12.10",
     "postcss": "^8.4.47",

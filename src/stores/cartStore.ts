@@ -1,6 +1,6 @@
 import type { Product } from "~/types";
 import type { CartItem } from "~/types/cart";
-
+import { Big } from "big.js";
 
 export const useCartStore = defineStore('cartStore', {
   state: () => ({
@@ -29,4 +29,11 @@ export const useCartStore = defineStore('cartStore', {
       this.cart = [];
     },
   },
+  getters: {
+    cartTotal(state) {
+      return state.cart.reduce(
+        (acc, product) => acc.plus(Big(product.price).times(product.quantity)), Big(0))
+        .toFixed(2);
+    },
+  }
 });
