@@ -1,6 +1,6 @@
-import type { Product, ProductCategory } from '~/types';
-import { apiService } from './ApiService';
-import type { ApiService } from './ApiService';
+import type { Product } from '~/types';
+import type { ApiService } from './apiService';
+import { apiService } from './apiService';
 
 
 class ProductService {
@@ -22,7 +22,7 @@ class ProductService {
   }
 
   async getAllCategories() {
-    return await this.apiService.get(`https://fakestoreapi.com/products/categories`) as ProductCategory[];
+    return await this.apiService.get(`https://fakestoreapi.com/products/categories`) as string[];
   }
 
   async getProductsByCategory(category: string) {
