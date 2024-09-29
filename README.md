@@ -1,5 +1,5 @@
 # Webshop Frontend  
-
+Deployed at: http://shopidyhop-production.up.railway.app
 
 
 ## Acceptance Criteria
