@@ -1,9 +1,9 @@
 <template>
   <nav class="text-white p-4">
     <div class="container mx-auto flex justify-between items-center">
-      <div v-if="currentRoute !== '/'" to="/"  class="text-white" @click="goBack">
+      <button v-if="currentRoute !== '/'" to="/"  class="text-white cursor-pointer" @click="goBack">
         < Back
-      </div>
+      </button>
 
 
       <NuxtLink 
