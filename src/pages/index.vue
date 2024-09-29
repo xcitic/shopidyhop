@@ -1,17 +1,17 @@
 <template>
-  <div>
+  <div className="">
     <h1>Categories</h1>
     <ul>
       <li v-for="(category, index) in categories" :key="index">
         {{ category }}
       </li>
     </ul>
-    <h1>Products</h1>
-    <ul>
+    <h1 class="text-3xl font-bold">Products</h1>
+    <div>
       <li v-for="product in products" :key="product.id">
         {{ product.title }}
       </li>
-    </ul>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
