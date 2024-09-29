@@ -1,9 +1,5 @@
 <template>
-  <div className="p-12">
-    <div class="flex flex-row mb-2">
-      <NuxtLink to="/cart" class="bg-blue-500 text-white px-4 py-2 rounded-lg self-end">Cart</NuxtLink>
-    </div>
-
+  <div>
     <div class="flex lg:flex-row flex-col gap-4 justify-between mb-4">
       <CategoryFilter :categories="categories" v-model="selectedCategory"/>
       <Searchbar v-model="query"/>
