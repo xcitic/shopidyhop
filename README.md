@@ -22,7 +22,6 @@ Products -> https://fakestoreapi.com/
 + Vue3
 + Typescript
 + Pinia (state management)
-+ 
 
 
 ### Entities 
@@ -33,9 +32,7 @@ Products -> https://fakestoreapi.com/
   - Price
 
 ### Frontend Routes  
-List products  `/`
-
-Product Details `/${product_id}`
-
-Login & Signup `/auth`
++ List products  `/`
++ Product Details `/products/${product_id}`
++ Cart `/cart`
 
