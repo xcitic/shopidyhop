@@ -9,7 +9,7 @@
       <Searchbar v-model="query"/>
     </div>
     <div class="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-x-4 gap-y-8">
-      <ProductCard v-for="product in products" :key="product.id" :product="product" />
+      <ProductCard v-for="product in productsToDisplay" :key="product.id" :product="product" />
     </div>
   </div>
 </template>
@@ -22,16 +22,23 @@
   });
 
   const categories = computed(() => productStore.categories);
-  const products = computed(() => productStore.products);
-
   const selectedCategory = ref('');
-
   const query = ref('');
 
-  /**
-    watch(query, async (newQuery) => {
-      await productStore.fetchProducts(newQuery);
-    });
+  const productsToDisplay = computed(() => {
+    if (selectedCategory.value && query.value) {
+      return productStore.getProductsByCategoryAndQuery(selectedCategory.value, query.value);
+    }
+    if (selectedCategory.value) {
+      return productStore.getProductsByCategory(selectedCategory.value);
+    } 
+    if (query.value) {
+      return productStore.getProductsByQuery(query.value);
+    }
+    
+    return productStore.products;
+    
+  });
 
-   */
+
 </script>
